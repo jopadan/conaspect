@@ -16,10 +16,10 @@ endif
 
 all: $(PROGRAM)
 
-tolower: $(PROGRAM)$(OBJECT_EXT)
+$(PROGRAM): $(PROGRAM)$(OBJECT_EXT)
 	$(GCC) $(CFLAGS) -lm -o $(PROGRAM) $(PROGRAM)$(OBJECT_EXT)
 
-tolower$(OBJECT_EXT): $(PROGRAM).c
+$(PROGRAM)$(OBJECT_EXT): $(PROGRAM).c
 	$(GCC) $(CFLAGS) -c $(PROGRAM).c
 clean:
 	$(RM) -rf $(PROGRAM)$(OBJECT_EXT) $(PROGRAM)$(EXECUTABLE_EXT)

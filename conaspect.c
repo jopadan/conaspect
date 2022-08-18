@@ -6,7 +6,7 @@
 #include <sys/param.h>
 
 #ifndef __MMX__
-typedef int __m64 __attribute__((__vector_size__(8), __may_alias__));
+typedef int32_t __m64 __attribute__((__vector_size__(sizeof(int32_t) * 2), __may_alias__));
 #else
 #include <mmintrin.h>
 #endif
