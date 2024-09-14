@@ -15,10 +15,7 @@ typedef __m64 vec2i;
 
 int gcd(int x, int y)
 {
-	if(y == 0)
-		return MAX(x, -x);
-	else
-		return gcd(y, x % y);
+	return y == 0 ? MAX(x, -x) : gcd(y, x % y);
 }
 
 
